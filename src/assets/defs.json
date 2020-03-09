@@ -7,7 +7,7 @@
     },
     "properties": {
       "myAddress": {
-        "$ref": "#/definitions/commonAddress"
+        "$ref": "#/definitions/localAddress"
       }
     }
 }
