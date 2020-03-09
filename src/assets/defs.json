@@ -47,14 +47,6 @@
           "$ref": "#/definitions/country"
         }
       }
-    },
-    "other": {
-      "type": "object",
-      "properties": {
-        "otherTest": {
-          "$ref": "http://localhost:5000/ramp-schemas/forms/u4/common-data-definitions.json#/definitions/address"
-        }
-      }
     }
   }
 }

@@ -12,6 +12,7 @@
     "@angular/router": "^8.0.0",
     "core-js": "2",
     "json-refs": "^3.0.15",
+    "ngx-json-viewer": "^2.4.0",
     "rxjs": "^6.5.2",
     "zone.js": "^0.9.1"
   },

@@ -11,11 +11,14 @@ export class AppComponent  {
   schema = {
    "type": "object",
    "properties": {
-     "randomOther": {
-        "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/defs.json#/definitions/other"
+      "Inner1": {
+        "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/defs.json#/definitions/usaState"
+     },
+     "inner2": {
+        "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/defs.json#/definitions/country"
      },
       "sub": {
-        "$ref": "http://localhost:5000/ramp-schemas/forms/u4/common-data-definitions.json#/definitions/address"
+        "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/defs.json#/definitions/address"
       }
    }
 }
