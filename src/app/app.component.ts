@@ -51,10 +51,12 @@ export class AppComponent  {
       }
     }
   }
+
+  res = {} ;
   
 
   ngOnInit( ) {
     JsonRefs.resolveRefsAt('https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/base.json').
-    then(e => { console.log(e)});
+    then(e => { this.res = e;});
   }
 }
