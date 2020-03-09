@@ -2,11 +2,11 @@
   "definitions": {
     "usaState": {
       "title": "State",
-           "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/mockServer2.json?q=state"
+           "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/mockServer2.json"
     },
     "country": {
       "title": "Country",
-      "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/mockServer.json?q=country"
+      "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/mockServer.json"
     },
     "address": {
       "$comment": "Documents the standard format for addresses.",
@@ -36,62 +36,20 @@
         },
         "stateCode": {
           "title": "State",
-          "$ref": "#/definitions/usaState",
-          "messages": [
-            {
-              "messageKey": "required",
-              "messageText": "When the country entered is United States, a State and Postal Code must be provided."
-            }
-          ]
+          "$ref": "#/definitions/usaState"
         },
         "postalCode": {
           "title": "Postal Code",
-          "type": "string",
-          "messages": [
-            {
-              "messageKey": "pattern",
-              "messageText": "The Postal Code must be in one of the following formats : 99999 or 99999-9999, when a State is selected."
-            },
-            {
-              "messageKey": "required",
-              "messageText": "When the country entered is United States, a State and Postal Code must be provided."
-            }
-          ]
+          "type": "string"
         },
         "countryCode": {
           "title": "Country",
-          "$ref": "#/definitions/country",
-          "messages": [
-            {
-              "messageKey": "const",
-              "messageText": "You have entered an invalid countryCode."
-            }
-          ]
+          "$ref": "#/definitions/country"
         }
-      },
-      "allOf": [
-        {
-          "if": {
-            "properties": {
-              "countryCode": {
-                "const": "USA"
-              }
-            }
-          },
-          "then": {
-            "required": [
-              "stateCode",
-              "postalCode"
-            ],
-            "properties": {
-              "postalCode": {
-                "maxLength": 11,
-                "pattern": "^\\d{5}(?:-\\d{4})?$"
-              }
-            }
-          }
-        }
-      ]
+      }
+    },
+    "other": {
+      "type": "string"
     }
   }
 }
