@@ -1,13 +1,98 @@
 {
-    "type": "object",
-    "definitions": {
-        "localAddress": {
-      "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/mockServer.json#/definitions/commonAddress"
-        }
+  "type": "object",
+  "definitions": {
+    "usaState": {
+      "title": "State",
+           "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/mockServer2.json"
     },
-    "properties": {
-      "myAddress": {
-        "$ref": "#/definitions/localAddress"
-      }
+    "country": {
+      "title": "Country",
+      "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/mockServer.json"
+    },
+    "address": {
+      "$comment": "Documents the standard format for addresses.",
+      "title": "Address",
+      "required": [
+        "addressLine1",
+        "cityName",
+        "countryCode"
+      ],
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "addressLine1": {
+          "title": "Street 1",
+          "type": "string",
+          "maxLength": 50
+        },
+        "addressLine2": {
+          "title": "Street 2",
+          "type": "string",
+          "maxLength": 50
+        },
+        "cityName": {
+          "title": "City",
+          "type": "string",
+          "maxLength": 50
+        },
+        "stateCode": {
+          "title": "State",
+          "$ref": "#/definitions/usaState",
+          "messages": [
+            {
+              "messageKey": "required",
+              "messageText": "When the country entered is United States, a State and Postal Code must be provided."
+            }
+          ]
+        },
+        "postalCode": {
+          "title": "Postal Code",
+          "type": "string",
+          "messages": [
+            {
+              "messageKey": "pattern",
+              "messageText": "The Postal Code must be in one of the following formats : 99999 or 99999-9999, when a State is selected."
+            },
+            {
+              "messageKey": "required",
+              "messageText": "When the country entered is United States, a State and Postal Code must be provided."
+            }
+          ]
+        },
+        "countryCode": {
+          "title": "Country",
+          "$ref": "#/definitions/country",
+          "messages": [
+            {
+              "messageKey": "const",
+              "messageText": "You have entered an invalid countryCode."
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "countryCode": {
+                "const": "USA"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "stateCode",
+              "postalCode"
+            ],
+            "properties": {
+              "postalCode": {
+                "maxLength": 11,
+                "pattern": "^\\d{5}(?:-\\d{4})?$"
+              }
+            }
+          }
+        }
+      ]
     }
+  }
 }

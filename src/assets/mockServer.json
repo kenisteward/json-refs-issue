@@ -1,18 +1,9 @@
 {
-  "definitions": {
-    "states": {
-      "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/mockServer2.json"
-    },
-    "commonAddress": {
-      "type": "object",
-      "properties": {
-        "line1": {
-          "type": "string"
-        },
-        "stateCode": {
-          "$ref": "#/definitions/states"
-        }
-      }
+  "type": "string",
+  "oneOf": [
+    {
+      "const": "c1",
+      "title": "Country 1"
     }
-  }
+  ]
 }
