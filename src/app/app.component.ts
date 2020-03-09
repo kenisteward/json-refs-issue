@@ -20,10 +20,8 @@ export class AppComponent  {
    }
 }
 
-
   res = {} ;
   
-
   ngOnInit( ) {
     JsonRefs.resolveRefs(this.schema).
     then(e => { this.res = e;});
