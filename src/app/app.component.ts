@@ -53,12 +53,7 @@ export class AppComponent  {
   }
 
   ngOnInit( ) {
-    const options =         {resolveCirculars: true,
-        location: 'http://localhost:5000/ramp-schemas/forms/u4/u4.json',
-        loaderOptions: {
-            prepareRequest: (req, cb) => { req.withCredentials(true); cb(undefined, req); }
-        }};
-    JsonRefs.resolveRefs(this.schema).
+    JsonRefs.resolveRefsAt('https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/defs.json').
     then(e => { console.log(e.resolved)});
   }
 }
