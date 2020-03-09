@@ -1,24 +1,7 @@
 {
   "definitions": {
-    "stateFromServer": {
-      "type": "string",
-      "oneOf": [
-        {
-          "const": "s1",
-          "title": "State 1"
-        },
-        {
-          "const": "s2",
-          "title": "State 2"
-        },
-        {
-          "const": "s3",
-          "title": "State 3"
-        }
-      ]
-    },
     "states": {
-      "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/mockServer.json#/definitions/stateFromServer"
+      "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/mockServer2.json"
     },
     "commonAddress": {
       "type": "object",
