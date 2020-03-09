@@ -12,7 +12,7 @@ export class AppComponent  {
    "type": "object",
    "properties": {
       "sub": {
-        "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/defs.json"
+        "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/defs.json#/definitions/address"
       }
    }
 }

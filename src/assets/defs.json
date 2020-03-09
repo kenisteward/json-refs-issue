@@ -1,13 +1,12 @@
 {
-  "type": "object",
   "definitions": {
     "usaState": {
       "title": "State",
-           "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/mockServer2.json"
+           "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/mockServer2.json?q=state"
     },
     "country": {
       "title": "Country",
-      "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/mockServer.json"
+      "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/mockServer.json?q=country"
     },
     "address": {
       "$comment": "Documents the standard format for addresses.",
