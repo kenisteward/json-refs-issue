@@ -1,19 +1,8 @@
 {
     "type": "object",
     "definitions": {
-        "states": {
-          "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/mockServer.json#/definitions/stateFromServer"
-        },
-        "commonAddress": {
-            "type": "object",
-            "properties": {
-                "line1": {
-                    "type": "string"
-                },
-                "stateCode": {
-                    "$ref": "#/definitions/states"
-                }
-            }
+        "localAddress": {
+      "$ref": "https://raw.githubusercontent.com/kenisteward/json-refs-issue/master/src/assets/mockServer.json#/definitions/commonAddress"
         }
     },
     "properties": {
